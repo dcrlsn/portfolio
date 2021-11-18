@@ -310,3 +310,35 @@ footer section a:hover {
     font-size: 16px;
   }
 }
+
+@media screen and (max-width:400px) {
+  header {
+    width: 100%
+  }
+
+  header div {
+    width: 150px;
+    flex: 0 1 200px;
+  }
+
+  header div h1 {
+    font-size: 20px;
+  }
+
+  header div img {
+    height: 30px;
+  }
+
+  header nav a {
+    font-size: 12px;
+  }
+
+  nav ul {
+    margin-right: 0px;
+    list-style-type: none;
+  }
+
+  footer section a {
+    font-size: 12px;
+  }
+}
