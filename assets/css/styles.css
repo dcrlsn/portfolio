@@ -1,3 +1,4 @@
+/* Setting color variables */
 :root {
   --darkestblue: #03045e;
   --headerblue: #023e8a;
@@ -5,9 +6,13 @@
   --paleblue: #caf0f8;
 }
 
+* {
+  box-sizing: border-box;
+}
+
+/* Fonts from Google. */
 body {
   font-family: 'Roboto', sans-serif;
-  box-sizing: border-box;
 }
 
 header {
@@ -21,16 +26,31 @@ header {
   z-index: 1;
 }
 
+header div {
+  background-color: var(--headerblue);
+  padding: 15px;
+  width: 300px;
+  text-align: right;
+  display: inline-block;
+  flex: 0 0 300px;
+  border-radius: 0 .5rem .5rem 0;
+}
+
 header h1 {
   color: var(--paleblue);
   font-size: 30px;
-  background-color: var(--headerblue);
-  padding: 15px;
-  width: 250px;
-  text-align: right;
   display: inline-block;
-  flex: 0 0 250px;
-  border-radius: 0 .5rem .5rem 0;
+  vertical-align: middle;
+}
+
+header img {
+  display: inline-block;
+  height: 50px;
+  border-radius: 50%;
+  border: solid 2px var(--darkestblue);
+  margin: 0;
+  padding: 0;
+  vertical-align: middle;
 }
 
 nav ul {
@@ -71,13 +91,13 @@ nav a:hover {
   background-position: center;
 }
 
-main, footer, section, .projects, footer section {
+main, footer, .projects, footer section {
   display: flex;
   flex-wrap: wrap;
 }
 
 main, footer {
-  width: 100%;
+  width: 90%;
   margin: 0 auto;
 }
 
@@ -86,11 +106,16 @@ h2 {
   color: var(--headerblue)
 }
 
+h4 {
+  font-weight: 500;
+  color: var(--darkestblue)
+}
+
 aside {
-  width: 18%;
+  width: 20%;
   display: inline-block;
-  padding: 15px 15px 15px 0;
-  text-align: right;
+  padding: 15px 0;
+  text-align: left;
   margin: 20px 0;
   border-right: solid 5px var(--headerblue);
 }
@@ -101,24 +126,28 @@ section {
   flex-grow: 0;
   flex-shrink: 0;
   display: inline-block;
-  width: 64%;
+  width: 80%;
 }
 
 section p {
-  color: var(--darkestblue)
+  color: var(--darkestblue);
 }
 
 .projects {
   justify-content: space-between;
 }
 
-#seoproject {
+/* Features the first a tag in projects */
+.projects a:nth-of-type(1) {
   flex: 2 0 auto;
-  width: 98%;
-  height: 400px;
+  width: 80%;
+  height: 300px;
+}
+
+/* Background images for a tags */
+
+#seoproject {
   background-image: url("https://dcrlsn.github.io/seo-refactor-project/assets/images/digital-marketing-meeting.jpg");
-  background-size: cover;
-  background-position: center;
 }
 
 /* image from unsplash found here https://unsplash.com/photos/S6ZZulF-Qno */
@@ -142,18 +171,23 @@ section p {
   position: relative;
   flex: 1 0 auto;
   width: 45%;
-  height: 200px;
+  height: 150px;
   background-size: cover;
   background-position: center;
   margin-bottom: 5px;
   transition: all 500ms ease-in-out;
   border: solid 3px var(--headerblue);
   border-radius: .5rem;
+  color: transparent;
 }
+
+/* Fixes a spacing issue on non-featured projects */
 
 .projects a:nth-of-type(even) {
   margin-right: 5px;
 }
+
+/* Shading effect that disappears upon hover to hilight a project */
 
 .projects a::before {
   content: "";
@@ -170,6 +204,8 @@ section p {
 .projects a:hover::before {
   opacity: 0;
 }
+
+/* Label and label effects for hover */
 
 .projects a::after {
   content: attr(data-descr);
@@ -207,4 +243,63 @@ footer section a {
 
 footer section a:hover {
   color: var(--brightblue);
+}
+
+/* Media queries for different screen sizes */
+
+@media screen and (max-width:992px) {
+  main, footer, .projects {
+    flex-direction: column;
+  }
+
+  footer section {
+    margin-bottom: 40px;
+    justify-content: space-between;
+  }
+
+  footer a {
+    display: inline-block;
+    text-align: left;
+    width: 50%;
+    padding: 5px 20px;
+  }
+
+  footer a:nth-of-type(even) {
+    text-align: right;
+  }
+
+  header ul {
+    padding-right: 20px;
+    width: 100px;
+  }
+
+  header ul li {
+    padding: 5px 0;
+  }
+
+  aside {
+    border-bottom: solid 3px var(--darkestblue);
+    border-right: none;
+    width: 100%;
+  }
+
+  section {
+    width: 100%;
+    margin: 0;
+    padding: 0;
+  }
+
+  .projects a {
+    width: 100%;
+  }
+
+  .projects a:nth-of-type(1) {
+    width: 100%;
+  }
+}
+
+@media screen and (max-width:768px) {
+  footer section a {
+    font-size: 16px;
+  }
 }
