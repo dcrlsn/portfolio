@@ -246,6 +246,13 @@ footer section a:hover {
 }
 
 /* Media queries for different screen sizes */
+@media screen and (min-width:1920px) {
+  main, footer {
+    width: 1800px;
+    margin: 0 auto;
+  }
+
+}
 
 @media screen and (max-width:992px) {
   main, footer, .projects {
