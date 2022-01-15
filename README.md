@@ -1,7 +1,5 @@
 # Portfolio
 
-<img src="./assets/images/page.png" alt="image of page" height="500px">
-
  - [Link to Site](https://dcrlsn.github.io/portfolio)
 ## Table of Contents
 
